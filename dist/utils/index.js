@@ -14,8 +14,5 @@ var __exportStar = (this && this.__exportStar) || function(m, exports) {
     for (var p in m) if (p !== "default" && !Object.prototype.hasOwnProperty.call(exports, p)) __createBinding(exports, m, p);
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-__exportStar(require("./validateBody.middleware"), exports);
-__exportStar(require("./isValidId.middleware"), exports);
-__exportStar(require("./handleMongooseError.middleware"), exports);
-__exportStar(require("./authenticate.middleware"), exports);
+__exportStar(require("./CustomError"), exports);
 //# sourceMappingURL=index.js.map

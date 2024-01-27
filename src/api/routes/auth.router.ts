@@ -1,6 +1,6 @@
 import express from 'express';
 
-import controller from "../controllers/auth";
+import controller from "../controllers/auth.controller";
 import { validateBody, authenticate } from '../middlewares';
 import schemas from '../request-schemas/users.request-schemas';
 

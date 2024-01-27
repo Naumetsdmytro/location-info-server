@@ -32,4 +32,4 @@ const userSchema = new Schema(
 
 // userSchema.post("save", handleMongooseError);
 
-export const User = model("Users", userSchema);
+export const User = model("users", userSchema);

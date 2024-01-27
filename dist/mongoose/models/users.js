@@ -2,6 +2,7 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.User = void 0;
 const mongoose_1 = require("mongoose");
+// import { handleMongooseError } from "../../api/middlewares/handleMongooseError";
 const emailRegexp = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
 const userSchema = new mongoose_1.Schema({
     firstName: {
@@ -26,5 +27,5 @@ const userSchema = new mongoose_1.Schema({
     token: String,
 }, { versionKey: false, timestamps: true });
 // userSchema.post("save", handleMongooseError);
-exports.User = (0, mongoose_1.model)("Users", userSchema);
+exports.User = (0, mongoose_1.model)("users", userSchema);
 //# sourceMappingURL=users.js.map

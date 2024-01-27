@@ -1,9 +1,10 @@
 import Joi from "joi";
 
 const registerSchema = Joi.object({
-    subscription: Joi.string().valid("starter", "pro", "business").required(),
     email: Joi.string().required().email(),
     password: Joi.string().min(6).required(),
+    firstName: Joi.string().required(),
+    lastName: Joi.string().required(),
   });
   
   const loginSchema = Joi.object({
@@ -11,12 +12,7 @@ const registerSchema = Joi.object({
     password: Joi.string().min(6).required(),
   });
   
-  const updateSubscriptionSchema = Joi.object({
-    subscription: Joi.string().valid("starter", "pro", "business").required(),
-  });
-  
   export default {
     registerSchema,
     loginSchema,
-    updateSubscriptionSchema,
   };

@@ -5,11 +5,12 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = __importDefault(require("express"));
 const cors_1 = __importDefault(require("cors"));
-const auth_1 = __importDefault(require("./api/routes/auth"));
+require('dotenv').config();
+const auth_router_1 = __importDefault(require("./api/routes/auth.router"));
 const app = (0, express_1.default)();
 app.use((0, cors_1.default)());
 app.use(express_1.default.json());
-app.use("/auth", auth_1.default);
+app.use("/auth", auth_router_1.default);
 app.use((req, res) => {
     res.status(404).json({ message: "Not found" });
 });
@@ -18,5 +19,4 @@ app.use((err, req, res, next) => {
     res.status(status).json({ message });
 });
 exports.default = app;
-// bla bkla
 //# sourceMappingURL=app.js.map

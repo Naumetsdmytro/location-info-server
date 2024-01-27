@@ -6,8 +6,9 @@
     "sourceMap": true,
     "outDir": "./dist",
     "types": ["node"],
+    "typeRoots": ["./src/@types", "./node_modules/@types"],
     "esModuleInterop": true
   },
-  "include": ["src/*.ts", "src/types/*.d.ts"],
+  "include": ["src/*.ts", "src/types/*.d.ts", "src/types/customTypes.ts"],
   "exclude": ["node_modules"]
 }

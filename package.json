@@ -3,6 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
+    "build": "tsc",
     "start": "tsc && cross-env NODE_ENV=production node src/server.js",
     "start:dev": "npx nodemon --exec ts-node src/server.ts",
     "lint": "eslint **/*.ts",

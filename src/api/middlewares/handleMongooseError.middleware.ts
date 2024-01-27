@@ -1,5 +1,5 @@
 import { NextFunction } from 'express'
-import { CustomError } from "../../app";
+import { CustomError } from "../../utils";
 
 export const handleMongooseError = (error: CustomError, data: any, next: NextFunction) => {
   const { name, code } = error as CustomError & { code: number };
