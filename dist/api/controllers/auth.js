@@ -43,8 +43,8 @@ const logout = async (req, res) => {
     res.status(200).json({ message: "Logout success" });
 };
 const current = async (req, res) => {
-    const { email, firstName } = req.user;
-    res.status(200).json({ user: { email, firstName } });
+    const { email, subscription } = req.user;
+    res.status(200).json({ user: { email, subscription } });
 };
 exports.default = {
     register: (0, helpers_1.ctrlWrapper)(register),

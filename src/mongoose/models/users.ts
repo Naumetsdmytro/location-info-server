@@ -1,6 +1,6 @@
 import { Schema, model } from "mongoose";
 
-import { handleMongooseError } from "../../api/middlewares";
+// import { handleMongooseError } from "../../api/middlewares/handleMongooseError";
 
 const emailRegexp = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
 

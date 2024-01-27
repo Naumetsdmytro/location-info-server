@@ -1,14 +1,13 @@
 {
-    "compilerOptions": {
-      "module": "CommonJS",
-      "target": "ESNext",
-      "moduleResolution": "node",
-      "esModuleInterop": true,
-      "sourceMap": true,
-      "outDir": "./dist",
-      "types": ["node"]
-    },
-    "include": ["src/**/*.ts"],
-    "exclude": ["node_modules"]
-  }
-  
+  "compilerOptions": {
+    "module": "CommonJS",
+    "target": "ESNext",
+    "moduleResolution": "node",
+    "sourceMap": true,
+    "outDir": "./dist",
+    "types": ["node"],
+    "esModuleInterop": true
+  },
+  "include": ["src/*.ts", "src/types/*.d.ts"],
+  "exclude": ["node_modules"]
+}

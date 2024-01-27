@@ -2,10 +2,19 @@ import express from 'express';
 import cors from "cors";
 import { Request, Response, NextFunction } from 'express'
 require('dotenv').config();
-
 import authRouter from "./api/routes/auth";
 
 const app = express();
+
+export class CustomError extends Error {
+  status?: number;
+  message: string;
+
+  constructor(status?: number, message?: string) {
+    super(message);
+    this.status = status;
+  }
+}
 
 app.use(cors());
 app.use(express.json());

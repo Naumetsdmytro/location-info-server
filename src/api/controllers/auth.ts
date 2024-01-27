@@ -1,9 +1,10 @@
+import { model } from 'mongoose';
 import bcrypt from 'bcrypt'
 import jwt from "jsonwebtoken";
 import { Request, Response } from 'express'
 
 import { HttpError, ctrlWrapper } from "../helpers";
-import { User } from "../../mongoose/models";
+import {User} from "../../mongoose/models/users";
 const { SECRET_KEY } = process.env;
 
 const register = async (req: Request, res: Response) => {
@@ -55,9 +56,9 @@ const logout = async (req: Request, res: Response) => {
 };
 
 const current = async (req: Request, res: Response) => {
-  const { email, firstName } = req.user;
+  const { email, subscription } = req.user;
 
-  res.status(200).json({ user: { email, firstName } });
+  res.status(200).json({ user: { email, subscription } });
 };
 
 export default {

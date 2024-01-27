@@ -2,7 +2,7 @@ import express from 'express';
 
 import controller from "../controllers/auth";
 import { validateBody, authenticate } from '../middlewares';
-import schemas from "../request-schemas/users.request-schemas";
+import schemas from '../request-schemas/users.request-schemas';
 
 const router = express.Router();
 

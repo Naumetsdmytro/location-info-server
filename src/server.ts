@@ -1,7 +1,9 @@
 import app from "./app";
 import mongoose from "mongoose";
 
-const uriDB = process.env.DB_HOST as string;
+const DB= process.env.DB_HOST;
+
+const uriDB = DB;
 const PORT = process.env.PORT || 3000;
 
 const connection = mongoose.connect(uriDB);

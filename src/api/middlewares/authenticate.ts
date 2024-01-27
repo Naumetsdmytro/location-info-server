@@ -2,7 +2,7 @@ import jwt from "jsonwebtoken";
 import { Request, Response, NextFunction } from 'express'
 
 import { HttpError } from "../helpers";
-import { User } from "../../mongoose/models";
+import { User } from "../../mongoose/models/users";
 const { SECRET_KEY } = process.env;
 
 export const authenticate = async (req: Request, res: Response, next: NextFunction) => {

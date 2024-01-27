@@ -18,4 +18,5 @@ app.use((err, req, res, next) => {
     res.status(status).json({ message });
 });
 exports.default = app;
+// bla bkla
 //# sourceMappingURL=app.js.map
