@@ -1,6 +1,7 @@
 import express from 'express';
 import cors from "cors";
 import { Request, Response, NextFunction } from 'express'
+require('dotenv').config();
 
 import authRouter from "./api/routes/auth";
 
@@ -21,5 +22,3 @@ app.use((err: CustomError, req: Request, res: Response, next: NextFunction) => {
 });
 
 export default app;
-
-// bla bkla

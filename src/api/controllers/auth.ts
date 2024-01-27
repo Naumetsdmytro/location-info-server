@@ -55,9 +55,9 @@ const logout = async (req: Request, res: Response) => {
 };
 
 const current = async (req: Request, res: Response) => {
-  const { email, subscription } = req.user;
+  const { email, firstName } = req.user;
 
-  res.status(200).json({ user: { email, subscription } });
+  res.status(200).json({ user: { email, firstName } });
 };
 
 export default {

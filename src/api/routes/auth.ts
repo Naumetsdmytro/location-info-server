@@ -1,8 +1,8 @@
-import { express } from 'express';
+import express from 'express';
 
 import controller from "../controllers/auth";
 import { validateBody, authenticate } from '../middlewares';
-const { schemas } = require("../../service/schemas/users");
+import schemas from "../request-schemas/users.request-schemas";
 
 const router = express.Router();
 
