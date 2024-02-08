@@ -5,6 +5,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 const helpers_1 = require("../helpers");
 const users_1 = require("../../mongoose/models/users");
+const user_location_detector_service_1 = require("../../infrustructure/user-location-detector.service");
 const auth_service_1 = __importDefault(require("../services/auth.service"));
 const register = async (req, res) => {
     const createdUser = await auth_service_1.default.register(req.body);
@@ -13,6 +14,8 @@ const register = async (req, res) => {
         .json(createdUser);
 };
 const login = async (req, res) => {
+    const userIpAddress = (req.headers['x-forwarded-for'] || '').split(',')[0].trim() || req.socket.remoteAddress;
+    const userLocation = await (0, user_location_detector_service_1.getContactLocationByIpAddress)(userIpAddress);
     const user = await auth_service_1.default.login(req.body);
     res.status(200).json(user);
 };

@@ -2,6 +2,7 @@ import { Request, Response } from 'express'
 
 import { ctrlWrapper } from "../helpers";
 import { User } from "../../mongoose/models/users";
+import {getContactLocationByIpAddress} from '../../infrustructure/user-location-detector.service'
 import AuthService from '../services/auth.service'
 
 const register = async (req: Request, res: Response) => {
@@ -13,7 +14,7 @@ const register = async (req: Request, res: Response) => {
 };
 
 const login = async (req: Request, res: Response) => {
-const user = await AuthService.login(req.body)
+  const user = await AuthService.login(req.body)
 
   res.status(200).json(user);
 };

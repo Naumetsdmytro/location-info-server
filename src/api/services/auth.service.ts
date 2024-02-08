@@ -43,7 +43,7 @@ const login = async (loginData: Login) => {
 
   await User.findByIdAndUpdate(user._id, { token });
 
-  return { token, user: { email, fullName: user.firstName + ' ' + user.lastName  } };
+  return { token, user: { email, firstName: user.firstName, lastName: user.lastName  } };
 };
 
 export default {
