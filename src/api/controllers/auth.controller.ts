@@ -28,9 +28,9 @@ const logout = async (req: Request, res: Response) => {
 };
 
 const current = async (req: Request, res: Response) => {
-  const { email } = req.user;
+  const { email, firstName, lastName } = req.user;
 
-  res.status(200).json({ user: { email } });
+  res.status(200).json({ user: { email, firstName, lastName} });
 };
 
 export default {
